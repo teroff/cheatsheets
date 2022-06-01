@@ -9,3 +9,8 @@
 ## Record from webcam
     ffmpeg -i /dev/video0 output.mkv
 
+## Convert MTS files into MP4
+    IFS=$(echo -en "\n\b"); for i in *.MTS; do ffmpeg -i "$i" -c:a aac -strict experimental -b:a 128k "$i.mp4"; done
+
+## Convert MP4 files into Youtube ready MP4
+    ffmpeg -i input.mp4 -c:v libx264 -c:a aac -strict experimental -b:a 192k output.mp4
