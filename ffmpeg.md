@@ -14,3 +14,6 @@
 
 ## Convert MP4 files into Youtube ready MP4
     ffmpeg -i input.mp4 -c:v libx264 -c:a aac -strict experimental -b:a 192k output.mp4
+    for i in *.mp4; do ffmpeg -i "$i" -c:v libx264 -c:a aac -strict experimental -b:a 192k "new_$i"; done
+
+    for i in *.mp4; do ffmpeg -i "$i" -c:v libx264 -c:a aac -strict experimental -b:a 192k "new_$i"; done
