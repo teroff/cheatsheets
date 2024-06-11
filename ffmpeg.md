@@ -17,3 +17,6 @@
     for i in *.mp4; do ffmpeg -i "$i" -c:v libx264 -c:a aac -strict experimental -b:a 192k "new_$i"; done
 
     for i in *.mp4; do ffmpeg -i "$i" -c:v libx264 -c:a aac -strict experimental -b:a 192k "new_$i"; done
+
+## Lower video size
+	ffmpeg -i <path_to_video_file> -vcodec libx265 -crf 28 convertedVideo.mp4
